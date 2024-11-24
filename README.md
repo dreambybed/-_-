@@ -14,8 +14,3 @@
 ### 3.android打包和真机调试  
 打开UE5，新建一个fps模板项目，在上方菜单的平台选项中选择Android平台并打包   
 在手机中打开开发者选项并打开USB调试，连接至电脑，此时UE5会自动识别设备，在平台选项中选择移动设备，经过编译后就可以在手机上运行游戏项目  
-运行视频  
-<video width="320" height="240" controls>
-  <source src="class1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
