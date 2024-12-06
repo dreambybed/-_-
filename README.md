@@ -66,3 +66,4 @@
 
 ![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/fig11.png)  
 
+[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/Class2.mp4)
