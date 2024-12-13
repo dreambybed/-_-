@@ -113,4 +113,4 @@
   
 ![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig9.png)  
 
-[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/vedio/class3.mp4)    
+[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/video)    
