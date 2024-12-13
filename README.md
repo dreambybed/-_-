@@ -66,4 +66,51 @@
 
 ![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/fig11.png)  
 
-[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/Class2.mp4)
+[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/Class2.mp4)  
+## 第四课  
+### 1.登录界面  
+实现功能：输入用户名和密码，点击确认按钮进入游戏  
+  
+创建新的User Widget，使用editable text作为输入框，其中密码的输入框勾选is Password  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig1.png)
+    
+新建Hud蓝图中添加ui并显示，在GameMode蓝图中设置Hud, 在widget中增加confirm按钮，在click事件中绑定跳转场景逻辑，并设置新场景的GameMode，这里需要设置GameMode的别名，将加载场景的别名设置为loading，在open level中将options设置game=loading 
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig2.png)  
+   
+### 2.加载界面  
+实现功能：加载进度条，进度条完成切换场景  
+  
+创建新的User Widget，使用ProgressBar作为进度条，增加变量LoadProgress，将进度条的Percent绑定到LoadProgress  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig3.png)  
+  
+在相应创建的Hub蓝图中设置切换场景逻辑，这里先设置为伪进度条  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig4.png)    
+  
+### 3.游戏UI界面  
+实现功能：血条、子弹、准心显示和击中特效 
+  
+创建新的Widget，使用Text作为子弹数显示和分数显示，使用ProgressBar作为血条，使用Image作为准星图标，  
+
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig5.png)  
+  
+在血条的Percent绑定中设置为角色当前血量除总血量
+
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig6.png)  
+
+在击中特效的Image中设置is visible默认为hidden，在Widget增加变量HitTime，表示击中目标后击中特效剩余的显示时间，在击中特效的Image中设置is visible绑定，当HitTime大于0时显示击中特效
+
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig7.png)  
+
+在Widget中新增事件ShowHit，调用时将HitTime设置为0.5s，在每个Tick将HitTime减去一帧的时间
+
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig8.png)  
+  
+在BP_FirstPersonProjectile中，当子弹击中方块时，调用ShowHit
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig9.png)  
+
+[演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/vedio/class3.mp4)    
