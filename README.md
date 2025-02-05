@@ -1,5 +1,5 @@
-# Tecent_GameDevelop_OpenClass  
-## 第一课  
+# 腾讯公开课客户端作业  
+## 作业一、环境搭建  
 ### 1.UE源码编译  
 在Epic中绑定github账号，加入EpicGames组织，下载源码  
 运行源码中的Setup.bat，下载依赖文件  
@@ -14,7 +14,7 @@
 ### 3.android打包和真机调试  
 打开UE5，新建一个fps模板项目，在上方菜单的平台选项中选择Android平台并打包   
 在手机中打开开发者选项并打开USB调试，连接至电脑，此时UE5会自动识别设备，在平台选项中选择移动设备，经过编译后就可以在手机上运行游戏项目  
-## 第二课  
+## 作业二、射击逻辑  
 ### 1.射击命中物体加分  
 实现功能：子弹射击命中物体后，物体首先缩放为y倍，再次命中后物体销毁，物体有两种，一种是特殊目标，加分更多，一种是普通目标，加分较少，考虑多人游戏的情况  
   
@@ -67,7 +67,7 @@
 ![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/fig11.png)  
 
 [演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class2/Class2.mp4)  
-## 第四课  
+## 作业三、UI  
 ### 1.登录界面  
 实现功能：输入用户名和密码，点击确认按钮进入游戏  
   
@@ -114,3 +114,27 @@
 ![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig9.png)  
 
 [演示视频](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/video)    
+  
+## 作业四：动画
+### 1.敌人移动动画    
+  
+创建新的敌人蓝图，并创建动画蓝图，在动画蓝图中创建状态机，创建两个状态：闲置和行走，并设置转移条件  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig1.png)
+    
+给两个状态分配动画序列，其中行走状态分配1d混合动画，使用速度变量控制敌人动画的奔跑速度，并在蓝图初始化时获取敌人蓝图，并从中获取速度  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig2.png)  
+   
+在map中设置navimesh并在敌人蓝图中设置移动节点，让敌人走向玩家  
+  
+### 2.死亡动画  
+
+创建新的状态死亡和相应的转移条件，在敌人蓝图中设置血量变量，并在子弹蓝图中设置击中的血量减少时间  
+
+## 作业五：渲染
+### 1.光源  
+
+在场景中添加各种光源，包括定向光源、点光源和聚光灯等，查看效果  
+
+### 2.renderdoc
