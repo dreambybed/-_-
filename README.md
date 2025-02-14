@@ -5,8 +5,8 @@
 实现功能：多人联机下的装备拾取、玩家对战、人机对战与射击目标得分等玩法。  
 
 ### 多人联机下的武器拾取、切换、射击等操作  
-  
-![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
+
+<img src="https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif" alt="show" />   
   
 ### 多人联机下的敌人AI搜索玩家、靠近与射击、玩家对战  
 
