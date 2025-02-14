@@ -1,14 +1,21 @@
 # 腾讯公开课客户端作业  
 ## 大作业
+玩法：基于多人联机的PVPVE，玩家通过拾取武器、射击方块得分，不同方块具有不同的加分，同时玩家可以击杀其他玩家阻止其得分。地图中也存在四处巡逻的AI，会向其发现的玩家开火。  
+  
 实现功能：多人联机下的装备拾取、玩家对战、人机对战与射击目标得分等玩法。  
 
 ### 多人联机下的武器拾取、切换、射击等操作  
-
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
+  
 ### 多人联机下的敌人AI搜索玩家、靠近与射击、玩家对战  
 
-### 多人联机下的得分目标生成、同步与击中得分
-  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
 
+### 多人联机下的得分目标生成、同步与击中得分  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
+  
 ## 作业一、环境搭建  
 ### 1.UE源码编译  
 在Epic中绑定github账号，加入EpicGames组织，下载源码  
@@ -130,54 +137,95 @@
   
 创建新的敌人蓝图，并创建动画蓝图，在动画蓝图中创建状态机，创建两个状态：闲置和行走，并设置转移条件  
   
-![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig1.png)
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class4/image/1.png)  
     
 给两个状态分配动画序列，其中行走状态分配1d混合动画，使用速度变量控制敌人动画的奔跑速度，并在蓝图初始化时获取敌人蓝图，并从中获取速度  
   
-![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class3/image/fig2.png)  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class4/image/2.png)  
    
 在map中设置navimesh并在敌人蓝图中设置移动节点，让敌人走向玩家  
   
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class4/image/3.png)  
+  
 ### 2.死亡动画  
-
+  
 创建新的状态死亡和相应的转移条件，在敌人蓝图中设置血量变量，并在子弹蓝图中设置击中的血量减少时间  
-
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class4/image/4.png)  
+   
 ## 作业五：渲染
 ### 1.光源  
   
 在场景中添加各种光源，包括定向光源、点光源和聚光灯等，查看效果  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class5/1.png)  
   
 ### 2.renderdoc
 
 安装renderdoc，在游戏视图中进行截帧  
 
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class5/2.png)  
+
 ### 3.描边效果
 
 创建新的材质，使用BackFace的方法制作描边效果  
   
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class5/3.png)  
+
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class5/4.png)  
+  
 ## 作业六：AI  
 ### 1.实现指定点巡逻  
   
-在场景中添加各种光源，包括定向光源、点光源和聚光灯等，查看效果  
+创建敌人的行为树和黑板，新建UBTTask，在其中设置巡逻前往的位置并赋值给黑板。 
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/1.png)  
+
+在行为树中创建逻辑，使用move to节点让敌人前往目标点。   
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/2.png)  
+
+### 2.发现玩家  
+
+在AI控制器蓝图中添加AI感知，并在玩家蓝图中添加感知源。  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/3.png)  
+  
+在AI控制器蓝图中添加更新事件，当AI感知到玩家时，打印。  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/4.png)  
   
 ### 2.EQS巡逻
 
-安装renderdoc，在游戏视图中进行截帧  
-
+新建AI的EQS，将行为树中的巡逻位置改为EQS，从而让系统判断是否可达。  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/5.png)  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class6/6.png)  
+  
 ## 作业七：网络  
 实现效果：多人联机的得分、射击判定、动画及属性同步等
 ### 1.目标方块的更新 
   
 将特殊目标的材质使用广播的方式更新到每个客户端。
   
-将目标受击的变化广播，由于目标由服务器复制，将摧毁目标放在服务器执行。
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class7/1.png)  
+  
+将目标受击的变化广播，由于目标由服务器复制，将摧毁目标放在服务器执行。  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class7/2.png)  
   
 ### 2.射击判定
-
+  
 将血量变化和死亡判定放在服务端判定，而将hud的变化、死亡UI放在客户端本地，动画变化则使用广播  
-
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class7/3.png)  
+  
 ### 3.动画同步  
-
+  
 通过将角色等蓝图设置为复制和移动复制，实现角色的移动和动画等同步  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class7/4.png)  
+  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/blob/main/class7/5.png)  
   
  
