@@ -6,15 +6,15 @@
 
 ### 多人联机下的武器拾取、切换、射击等操作  
 
-<img src="https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif" alt="show" />   
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/大作业/1.gif)   
   
 ### 多人联机下的敌人AI搜索玩家、靠近与射击、玩家对战  
 
-![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/大作业/2.gif)  
 
 ### 多人联机下的得分目标生成、同步与击中得分  
   
-![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/%E5%A4%A7%E4%BD%9C%E4%B8%9A/1.gif)  
+![image](https://github.com/dreambybed/Tecent_GameDevelop_OpenClass/tree/main/大作业/3.gif)  
   
 ## 作业一、环境搭建  
 ### 1.UE源码编译  
